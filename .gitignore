@@ -1,0 +1,13 @@
+# Samsung's files and everything made from them: voice packs, the generated C, objects, recordings, scratch
+work/
+# what build.ps1 produces: the DLL holds the translated engine, and Samsung's library and voice samples sit beside it
+dist/
+# built oracle (an arm64 Android executable)
+tools/oracle/oracle
+# never commit Samsung's files, or anything rendered or captured from them, wherever they turn up
+*.apk
+*.so
+*.ivc
+*.pcm
+*.wav
+__pycache__/
