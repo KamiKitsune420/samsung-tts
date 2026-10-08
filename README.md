@@ -8,6 +8,14 @@ Samsung's store.
 This repository holds the tools and the glue. It holds nothing of Samsung's: no engine, no voice, no translated
 code (see [What is not here](#what-is-not-here)).
 
+## Download
+
+Both packages are on the [releases page](https://github.com/KamiKitsune420/samsung-tts/releases): the installer
+for the SAPI voices (`SamsungTTS-Setup-<version>.exe`) and the driver (`SamsungTTS-Driver-<version>.zip`). They
+need 64-bit Windows 10 or 11 and a processor with AVX2 (2013 or later); voices are downloaded separately, by the
+voice centre or as [the driver's documentation](driver/README.md) describes. Read
+[What is not here](#what-is-not-here) first: the DLLs in them contain Samsung's engine.
+
 ## The two packages
 
 `build.ps1` makes both.
@@ -159,7 +167,8 @@ copies of Samsung's software in another form, and nobody here has Samsung's perm
 to publish them, and whether running a voice this way is permitted at all, is for whoever does it to judge under
 Samsung's terms and their own law. The voice centre downloads voice data from Samsung's store at the user's
 request, and only from hosts under `samsungapps.com`. The maths library built in beside the engine is Android's
-(bionic `libm`), under its BSD-style licences.
+(bionic `libm`), under the BSD-style licences in [licenses/bionic-libm-NOTICE.txt](licenses/bionic-libm-NOTICE.txt)
+(the notice file of the Android Open Source Project's main branch), which goes into both packages.
 
 ## Related
 

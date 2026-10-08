@@ -28,7 +28,7 @@ $engine = "engine\sstts.c", "engine\fast.c", "engine\guards.c"
 Run tools\a2c\build.py work\engine work\engine\engine.exe engine\main.c @engine --stubs --jobs $Jobs
 Run tools\a2c\build.py work\engine "$dist\samsungtts_sapi.dll" @engine sapi\samsung_sapi.cpp --stubs --jobs $Jobs
 Run tools\a2c\build.py work\engine "$driver\samsungtts.dll" @engine driver\samsungtts.c --stubs --jobs $Jobs
-Copy-Item driver\samsungtts.h, driver\README.md, driver\example.py $driver -Force
+Copy-Item driver\samsungtts.h, driver\README.md, driver\example.py, licenses\bionic-libm-NOTICE.txt $driver -Force
 & powershell -ExecutionPolicy Bypass -File center\build.ps1
 if ($LASTEXITCODE -ne 0) { throw "the voice centre did not build" }
 if ($Installer) {
@@ -42,7 +42,7 @@ if ($Package) {
     $stage = "work\package"
     if (Test-Path $stage) { [IO.Directory]::Delete((Resolve-Path $stage), $true) }
     New-Item -ItemType Directory -Force $stage | Out-Null
-    Copy-Item "$driver\samsungtts.dll", "$driver\samsungtts.lib", "$driver\samsungtts.h", "$driver\README.md", "$driver\example.py" $stage
+    Copy-Item "$driver\samsungtts.dll", "$driver\samsungtts.lib", "$driver\samsungtts.h", "$driver\README.md", "$driver\example.py", "$driver\bionic-libm-NOTICE.txt" $stage
     git archive --format=zip -o "$stage\src.zip" HEAD
     if ($LASTEXITCODE -ne 0) { throw "git archive failed: the source goes in as of the last commit, so there has to be one" }
     $zip = "dist\SamsungTTS-Driver-$version.zip"

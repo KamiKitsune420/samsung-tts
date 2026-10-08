@@ -17,6 +17,7 @@ separate (below).
 | `samsungtts.lib` | import library, for C and C++ |
 | `example.py` | speaks a text into a WAV file from Python with `ctypes` |
 | `README.md` | this file |
+| `bionic-libm-NOTICE.txt` | the licence notices of Android's maths library, which is inside the DLL |
 | `src.zip` | the source of everything, as in the repository |
 
 ## The interface
@@ -109,4 +110,4 @@ The interface, the translator and the code around the engine are this project's.
 Samsung's**: their library, translated mechanically to native code, with its data. The voices are Samsung's too.
 Nobody here has Samsung's permission to pass either on; whether you may use or redistribute them is for you to
 judge under Samsung's terms and your own law. The maths library inside is Android's (bionic `libm`), translated
-the same way, under its BSD-style licences.
+the same way, under the BSD-style licences in `bionic-libm-NOTICE.txt`: pass that file on with the DLL.

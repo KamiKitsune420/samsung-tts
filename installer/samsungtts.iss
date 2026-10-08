@@ -39,6 +39,7 @@ Name: "{app}\data\voice"; Permissions: users-modify
 Source: "..\dist\SamsungTTS\samsungtts_sapi.dll"; DestDir: "{app}"; Flags: ignoreversion regserver 64bit restartreplace uninsrestartdelete
 Source: "..\dist\SamsungTTS\SamsungVoices.exe"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\dist\SamsungTTS\samples\*.wav"; DestDir: "{app}\samples"; Flags: ignoreversion
+Source: "..\licenses\bionic-libm-NOTICE.txt"; DestDir: "{app}\licenses"; Flags: ignoreversion
 
 [InstallDelete]
 ; versions before 0.2.0 kept the engine's library beside the DLL; it is inside the DLL now
